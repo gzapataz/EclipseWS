@@ -17,8 +17,8 @@ package uniandes.cupi2.biblioteca.mundo.excepciones;
 /**
  * Excepción lanzada cuando se presenta algún error al cargar la información de la biblioteca.
  */
-public class CargarBibliotecaException extends Exception
-{
+public class CargarBibliotecaException { //extends Exception
+//{
     
     // -----------------------------------------------------------------
     // Constantes

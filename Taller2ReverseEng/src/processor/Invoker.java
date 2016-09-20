@@ -10,9 +10,23 @@ public class Invoker {
 	public static void main(String args[]){
 		Invoker invoker = new Invoker();
 		//Source code path, and processor to be executed
-		invoker.invokeSpoon("./src/code/", "processor.Processor");
+		//invoker.invokeSpoon("./src/code/alfa.java", "processor.Processor");
+		//invoker.invokeSpoon("./src/code/InterfazBiblioteca.java", "processor.Processor");
+		invoker.invokeSpoon("./src/code/TestClass.java", "processor.Processor");
+		//invoker.invokeSpoon("./resources/n15_biblioteca/source/uniandes/cupi2/biblioteca/mundo/implementacion1/Biblioteca.java", "processor.Processor");
+		//invoker.invokeSpoon("./resources/n15_biblioteca/source/uniandes/cupi2/biblioteca/mundo/AbstractBiblioteca.java", "processor.Processor");
+		//invoker.invokeSpoon("./resources/n15_biblioteca/source/uniandes/cupi2/biblioteca/mundo/", "processor.Processor");
+		//invoker.invokeSpoon("/Users/gabrielzapata/Documents/workspace/Cupi2-Biblio/src/uniandes/cupi2/biblioteca/mundo/", "processor.Processor");
+		
+		//invoker.invokeSpoon("/Users/gabrielzapata/Documents/workspace/Cupi2-Biblio/src/uniandes/cupi2/biblioteca/mundo/excepciones/CopiasInsuficientesException.java", "processor.Processor");
+		//invoker.invokeSpoon("/Users/gabrielzapata/Documents/workspace/Cupi2-Biblio/src/uniandes/cupi2/biblioteca/mundo/ILibro.java", "processor.Processor");
+		
+		//invoker.invokeSpoon("/Users/gabrielzapata/Documents/workspace/Cupi2-Biblio/src/uniandes/cupi2/biblioteca/mundo/AbstractBiblioteca.java", "processor.Processor");
+		
+		//invoker.invokeSpoon("/Users/gabrielzapata/Documents/workspace/Cupi2-Biblio/src/uniandes/cupi2/biblioteca/mundo/IUsuario.java", "processor.Processor");
+		//invoker.invokeSpoon("/Users/gabrielzapata/Documents/workspace/Cupi2-Biblio/src/uniandes/cupi2/biblioteca/mundo/IFabricaBiblioteca.java", "processor.Processor");
+		
 	}
-	
 	/**
 	 * Invokes a spoon processor individually
 	 * 

@@ -2,10 +2,10 @@ package code;
 
 
 @annotation.MyAnnotation(myAttribute = "Class")
-public class TestClass extends java.lang.Object {
+public class TestClass_OBJ {
     int i;
     
-    public TestClass() {
+    public TestClass_OBJ() {
     }
     
     public void foo() {

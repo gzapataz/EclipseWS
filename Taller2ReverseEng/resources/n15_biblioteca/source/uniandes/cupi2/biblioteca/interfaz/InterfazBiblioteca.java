@@ -1,15 +1,15 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * $Id: InterfazBiblioteca.java,v 1.2 2008/09/03 15:52:02 jua-gome Exp $
- * Universidad de los Andes (Bogot‡ - Colombia)
- * Departamento de Ingenier’a de Sistemas y Computaci—n 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
  * Ejercicio: n15_biblioteca
  * Autor: Jose Felipe Vargas - 23-Jul-2007
  * Autor: Juan Sebastian Montes - 23-Jul-2007
- * Modificado por: Juan Erasmo G—mez - 20-Ago-2008
+ * Modificado por: Juan Erasmo Gï¿½mez - 20-Ago-2008
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 package uniandes.cupi2.biblioteca.interfaz;
@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import annotation.MyAnnotation;
 import uniandes.cupi2.biblioteca.mundo.AbstractBiblioteca;
 import uniandes.cupi2.biblioteca.mundo.IFabricaBiblioteca;
 import uniandes.cupi2.biblioteca.mundo.ILibro;
@@ -36,8 +37,9 @@ import uniandes.cupi2.biblioteca.mundo.implementacion1.FabricaBiblioteca;
 import uniandes.cupi2.collections.iterador.Iterador;
 
 /**
- * Interfaz principal de la aplicaci—n.
+ * Interfaz principal de la aplicaciï¿½n.
  */
+@MyAnnotation(myAttribute="Class")
 public class InterfazBiblioteca extends JFrame
 {
 
@@ -46,7 +48,7 @@ public class InterfazBiblioteca extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Constante para la serializaci—n.
+     * Constante para la serializaciï¿½n.
      */
     private static final long serialVersionUID = 1L;
 
@@ -55,7 +57,7 @@ public class InterfazBiblioteca extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * F‡brica que construye la clase principal del mundo.
+     * Fï¿½brica que construye la clase principal del mundo.
      */
     private IFabricaBiblioteca fabrica;
 
@@ -65,7 +67,7 @@ public class InterfazBiblioteca extends JFrame
     private AbstractBiblioteca biblioteca;
 
     /**
-     * Login del usuario que est‡ utilizando la aplicaci—n.
+     * Login del usuario que estï¿½ utilizando la aplicaciï¿½n.
      */
     private String loginUsuario;
 
@@ -79,17 +81,17 @@ public class InterfazBiblioteca extends JFrame
     private JPanel panelPrincipal;
 
     /**
-     * Panel donde est‡ la imagen.
+     * Panel donde estï¿½ la imagen.
      */
     private PanelImagen panelImagen;
 
     /**
-     * Scroll donde est‡ la lista de libros.
+     * Scroll donde estï¿½ la lista de libros.
      */
     private PanelLibros panelLibros;
 
     /**
-     * Panel donde est‡n ubicadas las acciones.
+     * Panel donde estï¿½n ubicadas las acciones.
      */
     private PanelAccionesContenedora panelAccionesContenedora;
 
@@ -98,7 +100,7 @@ public class InterfazBiblioteca extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Constructor de interfaz principal de la aplicaci—n.
+     * Constructor de interfaz principal de la aplicaciï¿½n.
      */
     public InterfazBiblioteca( )
     {
@@ -111,7 +113,7 @@ public class InterfazBiblioteca extends JFrame
         }
         catch( CargarBibliotecaException e )
         {
-            JOptionPane.showMessageDialog( this, "Error cargando el archivo: " + e.getMessage( ) + "\nSe reinicir‡n los datos del sistema", "Error", JOptionPane.ERROR_MESSAGE );
+            JOptionPane.showMessageDialog( this, "Error cargando el archivo: " + e.getMessage( ) + "\nSe reinicirï¿½n los datos del sistema", "Error", JOptionPane.ERROR_MESSAGE );
         }
         setSize( 779, 710 );
         setBackground( new Color( 238, 238, 179 ) );
@@ -147,7 +149,7 @@ public class InterfazBiblioteca extends JFrame
         panelLibros = new PanelLibros( this );
         panelPrincipal.add( panelLibros, gridBagConstraints12 );
 
-        // Agregar el panel donde est‡n las acciones
+        // Agregar el panel donde estï¿½n las acciones
         panelAccionesContenedora = new PanelAccionesContenedora( this );
         panelPrincipal.add( panelAccionesContenedora, gridBagConstraints1 );
         add( panelPrincipal );
@@ -156,13 +158,13 @@ public class InterfazBiblioteca extends JFrame
     }
 
     // -----------------------------------------------------------------
-    // MŽtodos
+    // Mï¿½todos
     // -----------------------------------------------------------------
 
     /**
      * Registra un nuevo usuario en el sistemas de biblioteca.
      * @param login Login del usuario.
-     * @param contrasenia Contrase–a del usuario.
+     * @param contrasenia Contraseï¿½a del usuario.
      * @param nombre Nombre del usuario.
      * @throws UsuarioPreexistenteException Si ya existe un usuario con el login ingresado.
      */
@@ -172,9 +174,9 @@ public class InterfazBiblioteca extends JFrame
     }
 
     /**
-     * MŽtodo para la autenticaci—n del usuario.
+     * Mï¿½todo para la autenticaciï¿½n del usuario.
      * @param login Login del usuario.
-     * @param contrasenia Contrase–a de usuario.
+     * @param contrasenia Contraseï¿½a de usuario.
      */
     public void autenticar( String login, String contrasenia )
     {
@@ -184,19 +186,19 @@ public class InterfazBiblioteca extends JFrame
             loginUsuario = login;
             panelLibros.cambiarUsuario( login );
             panelAccionesContenedora.login( login, biblioteca, biblioteca.darTotalLibros( ), biblioteca.darTotalLibrosEnPrestamo( ) );
-            JOptionPane.showMessageDialog( this, "Sesi—n iniciada con exito", "Bienvenido " + login, JOptionPane.INFORMATION_MESSAGE );
+            JOptionPane.showMessageDialog( this, "Sesiï¿½n iniciada con exito", "Bienvenido " + login, JOptionPane.INFORMATION_MESSAGE );
         }
         else
         {
-            JOptionPane.showMessageDialog( this, "Nombre de usuario o contrase–a incorrectos", "Error", JOptionPane.ERROR_MESSAGE );
+            JOptionPane.showMessageDialog( this, "Nombre de usuario o contraseï¿½a incorrectos", "Error", JOptionPane.ERROR_MESSAGE );
         }
     }
 
     /**
      * Agrega una copia de un libro a la biblioteca.<br>
-     * <b>post:</b> En caso que exista el libro aumenta en uno el nœmero de copias.
+     * <b>post:</b> En caso que exista el libro aumenta en uno el nï¿½mero de copias.
      * @param referencia Referencia del libro.
-     * @throws LibroInexistenteException Se lanza esta excepci—n cuando se intenta ingresar la copia de un libro que no existe
+     * @throws LibroInexistenteException Se lanza esta excepciï¿½n cuando se intenta ingresar la copia de un libro que no existe
      */
     public void insertarCopiaLibro( String referencia ) throws LibroInexistenteException
     {
@@ -220,13 +222,13 @@ public class InterfazBiblioteca extends JFrame
         }
         catch( LibroYaExisteException e )
         {
-            JOptionPane.showMessageDialog( this, "El libro ya exist’a previamente", "Libro agregado", JOptionPane.ERROR_MESSAGE );
+            JOptionPane.showMessageDialog( this, "El libro ya existï¿½a previamente", "Libro agregado", JOptionPane.ERROR_MESSAGE );
         }
 
     }
 
     /**
-     * Termina la sesi—n.
+     * Termina la sesiï¿½n.
      */
     public void salir( )
     {
@@ -235,8 +237,8 @@ public class InterfazBiblioteca extends JFrame
     }
 
     /**
-     * Hace la bœsqueda de un libro por palabras del t’tulo.
-     * @param datos Datos de la bœsqueda.
+     * Hace la bï¿½squeda de un libro por palabras del tï¿½tulo.
+     * @param datos Datos de la bï¿½squeda.
      */
     public void buscarTituloPorPalabra( String datos[] )
     {
@@ -246,8 +248,8 @@ public class InterfazBiblioteca extends JFrame
     }
 
     /**
-     * Hace la bœsqueda de un libro por el t’tulo exacto del libro.
-     * @param titulo T’tulo a buscar.
+     * Hace la bï¿½squeda de un libro por el tï¿½tulo exacto del libro.
+     * @param titulo Tï¿½tulo a buscar.
      */
     public void buscarTituloExacto( String titulo )
     {
@@ -257,7 +259,7 @@ public class InterfazBiblioteca extends JFrame
 
     /**
      * Busca los libros descritos por los autores que tienen las palabras dadas.
-     * @param datos Datos de la bœsqueda.
+     * @param datos Datos de la bï¿½squeda.
      */
     public void buscarAutoresPorPalabra( String datos[] )
     {
@@ -266,8 +268,8 @@ public class InterfazBiblioteca extends JFrame
     }
 
     /**
-     * Hace la bœsqueda de los libros por el nombre exacto del autor del libro.
-     * @param datos Datos de la bœsqueda.
+     * Hace la bï¿½squeda de los libros por el nombre exacto del autor del libro.
+     * @param datos Datos de la bï¿½squeda.
      */
     public void buscarAutoresExacto( String datos )
     {
@@ -277,7 +279,7 @@ public class InterfazBiblioteca extends JFrame
 
     /**
      * Busca los libros descritos por los descriptores que tienen las palabras dadas.
-     * @param datos Datos de la bœsqueda.
+     * @param datos Datos de la bï¿½squeda.
      */
     public void buscarDescriptoresPorPalabra( String datos[] )
     {
@@ -286,8 +288,8 @@ public class InterfazBiblioteca extends JFrame
     }
 
     /**
-     * Hace la bœsqueda de los libros por los descriptores exactos del autor del libro.
-     * @param datos Datos de la bœsqueda.
+     * Hace la bï¿½squeda de los libros por los descriptores exactos del autor del libro.
+     * @param datos Datos de la bï¿½squeda.
      */
     public void buscarDescriptoresExacto( String datos[] )
     {
@@ -296,29 +298,29 @@ public class InterfazBiblioteca extends JFrame
     }
 
     /**
-     * Acci—n que se ejecuta cuando el usuario que est‡ autenticado alquila un libro.
+     * Acciï¿½n que se ejecuta cuando el usuario que estï¿½ autenticado alquila un libro.
      * @param libro Libro que va alquilar el usuario.
-     * @throws CopiasInsuficientesException Se lanza esta excepci—n cuando no hay copias suficientes.
+     * @throws CopiasInsuficientesException Se lanza esta excepciï¿½n cuando no hay copias suficientes.
      */
     public void alquilar( String libro ) throws CopiasInsuficientesException
     {
         biblioteca.alquilarLibro( loginUsuario, libro );
-        JOptionPane.showMessageDialog( this, "Petici—n realizada con Žxito", "ƒxito", JOptionPane.INFORMATION_MESSAGE );
+        JOptionPane.showMessageDialog( this, "Peticiï¿½n realizada con ï¿½xito", "ï¿½xito", JOptionPane.INFORMATION_MESSAGE );
     }
 
     /**
-     * Acci—n que se ejecuta cuando el usuario que est‡ autenticado devuelve un libro alquilado.
+     * Acciï¿½n que se ejecuta cuando el usuario que estï¿½ autenticado devuelve un libro alquilado.
      * @param libro Libro alquilado que se va devolver.
      */
     public void devolver( String libro )
     {
         biblioteca.devolverLibro( loginUsuario, libro );
         panelLibros.actualizarListaAlquilados( biblioteca.darAlquilados( loginUsuario ) );
-        JOptionPane.showMessageDialog( this, "Petici—n realizada con Žxito", "ƒxito", JOptionPane.INFORMATION_MESSAGE );
+        JOptionPane.showMessageDialog( this, "Peticiï¿½n realizada con ï¿½xito", "ï¿½xito", JOptionPane.INFORMATION_MESSAGE );
     }
 
     /**
-     * Borra un libro que se devolvi— de la lista de libros.
+     * Borra un libro que se devolviï¿½ de la lista de libros.
      * @param panelLibroAlquilado Panel donde se muestran los datos del libro alquilado.
      */
     public void borrarDevuelto( PanelLibroAlquilado panelLibroAlquilado )
@@ -327,7 +329,7 @@ public class InterfazBiblioteca extends JFrame
     }
 
     /**
-     * Muestra los libros que est‡ alquilados por el usuario que est‡ autenticado.
+     * Muestra los libros que estï¿½ alquilados por el usuario que estï¿½ autenticado.
      */
     public void verAlquilados( )
     {
@@ -335,7 +337,7 @@ public class InterfazBiblioteca extends JFrame
     }
 
     /**
-     * MŽtodo que se ejecuta cuando se cierra la aplicaci—n.
+     * Mï¿½todo que se ejecuta cuando se cierra la aplicaciï¿½n.
      */
     public void dispose( )
     {
@@ -347,7 +349,7 @@ public class InterfazBiblioteca extends JFrame
         catch( Exception e )
         {
             setVisible( true );
-            int respuesta = JOptionPane.showConfirmDialog( this, "Problemas salvando la informaci—n de la biblioteca:\n" + e.getMessage( ) + "\nÀQuiere cerrar el programa sin salvar?", "Error", JOptionPane.YES_NO_OPTION );
+            int respuesta = JOptionPane.showConfirmDialog( this, "Problemas salvando la informaciï¿½n de la biblioteca:\n" + e.getMessage( ) + "\nï¿½Quiere cerrar el programa sin salvar?", "Error", JOptionPane.YES_NO_OPTION );
             if( respuesta == JOptionPane.YES_OPTION )
             {
                 super.dispose( );
@@ -360,8 +362,8 @@ public class InterfazBiblioteca extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Main de la aplicaci—n.
-     * @param args Lista de argumentos con las que corre la aplicaci—n.
+     * Main de la aplicaciï¿½n.
+     * @param args Lista de argumentos con las que corre la aplicaciï¿½n.
      */
     public static void main( String[] args )
     {
